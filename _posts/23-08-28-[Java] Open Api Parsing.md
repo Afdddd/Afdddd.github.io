@@ -1,7 +1,7 @@
 --- 
 layout: post 
-title:  "[Java]오픈 API 파싱하기(XML)"
 categories: [Java]
+tags: [java],[xml],[open api]
 ---
 
 # [Java]오픈 API 파싱하기(XML)
