@@ -13,8 +13,7 @@ tags : [java] [xml] [open api]
 
 ## 오픈API 활용신청
 
-![Untitled](%5BJava%5D%E1%84%8B%E1%85%A9%E1%84%91%E1%85%B3%E1%86%AB%20API%20%E1%84%91%E1%85%A1%E1%84%89%E1%85%B5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5(XML)%20cdbb412f016d4288a536d1fb57da0944/Untitled.png)
-
+image :/assets/image/Untitled.png
 우선 공공데이터포탈([https://www.data.go.kr/index.do](https://www.data.go.kr/index.do))에서 데이터 활용신청을 해야한다.
 
 허가는 1~2일 정도 걸렸다.
