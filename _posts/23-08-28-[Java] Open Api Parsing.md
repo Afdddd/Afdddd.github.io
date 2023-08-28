@@ -15,7 +15,7 @@ categories: [Java]
 
 ## 오픈API 활용신청
 
-![Untitled](assets/img/23-08-28(1).png)
+![23-08-28(1)](assets/img/23-08-28(1).png)
 우선 공공데이터포탈([https://www.data.go.kr/index.do](https://www.data.go.kr/index.do))에서 데이터 활용신청을 해야한다.
 
 허가는 1~2일 정도 걸렸다.
