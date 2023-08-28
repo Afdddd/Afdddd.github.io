@@ -22,7 +22,7 @@ categories: [Java]
 
 데이터 허가를 받으면 API인증키를 받을 수 있다.
 
-![Untitled](/assets/img/23-08-28(2).png)
+![23-08-28(2)](/assets/img/23-08-28(2).png)
 
 
 ## 요청변수
