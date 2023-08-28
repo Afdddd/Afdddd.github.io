@@ -1,7 +1,7 @@
 --- 
 layout: post 
 categories: [Java]
-tags: [java],[xml],[open api]
+tags: [java,openapi,xml]
 ---
 
 # [Java]오픈 API 파싱하기(XML)
