@@ -1,5 +1,3 @@
-# [Java]오픈 API 파싱하기(XML)
-
 --- 
 layout: post 
 title:  "[Java]오픈 API 파싱하기(XML)"
@@ -7,24 +5,30 @@ categories: [Java]
 tags : [java] [xml] [open api] 
 ---
 
+# [Java]오픈 API 파싱하기(XML)
+
+
+
 공공데이터 포털을 활용해 특정 버스의 도착 정보를 조회해보았다.
 
 공공데이터 신청부터 원하는 데이터를 파싱하는 것 까지 알아보자
 
+
 ## 오픈API 활용신청
 
-image :/assets/image/Untitled.png
+![Untitled](/assets/image/Untitled.png)
 우선 공공데이터포탈([https://www.data.go.kr/index.do](https://www.data.go.kr/index.do))에서 데이터 활용신청을 해야한다.
 
 허가는 1~2일 정도 걸렸다.
 
 데이터 허가를 받으면 API인증키를 받을 수 있다.
 
-![Untitled](%5BJava%5D%E1%84%8B%E1%85%A9%E1%84%91%E1%85%B3%E1%86%AB%20API%20%E1%84%91%E1%85%A1%E1%84%89%E1%85%B5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5(XML)%20cdbb412f016d4288a536d1fb57da0944/Untitled%201.png)
+![Untitled](/assets/image/Untitled1.png)
+
 
 ## 요청변수
 
-![Untitled](%5BJava%5D%E1%84%8B%E1%85%A9%E1%84%91%E1%85%B3%E1%86%AB%20API%20%E1%84%91%E1%85%A1%E1%84%89%E1%85%B5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5(XML)%20cdbb412f016d4288a536d1fb57da0944/Untitled%202.png)
+![Untitled](/assets/image/Untitled2.png)
 
 오픈API는 get방식 요청하기에  url에  API에서 요구하는 변수들을 넣어 요청하면 된다.
 
@@ -40,7 +44,7 @@ url 작성은 이런식으로 작성하면 된다.
 
 작성된 url을 주소창에 입력하면 
 
-![Untitled](%5BJava%5D%E1%84%8B%E1%85%A9%E1%84%91%E1%85%B3%E1%86%AB%20API%20%E1%84%91%E1%85%A1%E1%84%89%E1%85%B5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5(XML)%20cdbb412f016d4288a536d1fb57da0944/Untitled%203.png)
+![Untitled](/assets/image/Untitled3.png)
 
 이런식으로 xml 형태로 조회한 정보들을 제공한다.
 
@@ -104,7 +108,7 @@ Root노드에서 정규화를 해준다.
 
 ### 데이터 꺼내오기
 
-![Untitled](%5BJava%5D%E1%84%8B%E1%85%A9%E1%84%91%E1%85%B3%E1%86%AB%20API%20%E1%84%91%E1%85%A1%E1%84%89%E1%85%B5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5(XML)%20cdbb412f016d4288a536d1fb57da0944/Untitled%204.png)
+![Untitled](/assets/image/Untitled4.png)
 
 필요한 데이터들의 부모 노드 가져와 list에 담아둔다.
 
@@ -151,7 +155,7 @@ for(int i=0; i<nList.getLength();i++){
 
 ### 결과
 
-![Untitled](%5BJava%5D%E1%84%8B%E1%85%A9%E1%84%91%E1%85%B3%E1%86%AB%20API%20%E1%84%91%E1%85%A1%E1%84%89%E1%85%B5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5(XML)%20cdbb412f016d4288a536d1fb57da0944/Untitled%205.png)
+![Untitled](/assets/image/Untitled5.png)
 
 데이터들이 잘 파싱되었다. 
 
