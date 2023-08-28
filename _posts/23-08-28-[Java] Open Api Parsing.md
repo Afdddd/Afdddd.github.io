@@ -16,16 +16,21 @@ tags: [java,openapi,xml]
 ## 오픈API 활용신청
 
 ![23-08-28(1)](/assets/img/23-08-28(1).png)
-우선 공공데이터포탈([https://www.data.go.kr/index.do](https://www.data.go.kr/index.do))에서 데이터 활용신청을 해야한다.
 
+우선 공공데이터포탈([https://www.data.go.kr/index.do](https://www.data.go.kr/index.do))에서 데이터 활용신청을 해야한다.
 허가는 1~2일 정도 걸렸다.
 
 데이터 허가를 받으면 API인증키를 받을 수 있다.
 
+
 ![23-08-28(2)](/assets/img/23-08-28(2).png)
 
 
+
+
+
 ## 요청변수
+
 
 ![Untitled](/assets/img/23-08-28(3).png)
 
@@ -35,11 +40,13 @@ tags: [java,openapi,xml]
 
 내가 필요한 값들은 인증키, 페이지번호, 한페이지결과수, 정류소ID 이렇게 4개는 필수 값으로 꼭 값을 넘겨 줘야한다.
 
+
 url 작성은 이런식으로 작성하면 된다.
 
 요청url?serviceKey=”인증키” & pageNo=”pageNo” & numOfRwos= “” & bstopId=””
 
 [http://apis.data.go.kr/6280000/busArrivalService/getAllRouteBusArrivalList?serviceKey=”인증키”&pageNo=1&numOfRows=10&bstopId=165000111](http://apis.data.go.kr/6280000/busArrivalService/getAllRouteBusArrivalList?serviceKey=EeQ8yv6SwhuXSd60XpJqUhtzmlcoYvZuaXMnN0Fw3rMyHD%2FlkxK7CKMA4KCzLfYPz2Pc%2B4XPgsQki831XrQkHg%3D%3D&pageNo=1&numOfRows=10&bstopId=165000111)
+
 
 작성된 url을 주소창에 입력하면 
 
@@ -49,7 +56,9 @@ url 작성은 이런식으로 작성하면 된다.
 
 이제 자바 코드로 api를 요청해서 원하는 데이터를 받도록 해보자.
 
+
 ## 구현
+
 
 ### 요청 주소 작성
 
@@ -66,7 +75,9 @@ URL url = new URL(urlBuilder.toString());
 
 StringBuilder로 요청변수를 합쳐 url객체를 생성한다.
 
+
 ### 요청하기
+
 
 ```java
 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -75,9 +86,11 @@ conn.setRequestProperty("Content-type", "application/xml");
 conn.setRequestProperty("Accept", "*/*;q=0.9");
 ```
 
+
 생성한 url 객체로 데이터가 저장된 서버에 request하기 위한HttpURLConnection을 생성한다.
 
 요청메서드와 request header 값을 세팅해준다.
+
 
 ### Document 객체생성
 
@@ -151,6 +164,7 @@ for(int i=0; i<nList.getLength();i++){
      System.out.println("==============================================");
 }
 ```
+
 
 ### 결과
 
