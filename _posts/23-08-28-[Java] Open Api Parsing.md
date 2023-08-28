@@ -27,7 +27,7 @@ categories: [Java]
 
 ## 요청변수
 
-![Untitled](/assets/img/Untitled2.png)
+![Untitled](/assets/img/Untitled 2.png)
 
 오픈API는 get방식 요청하기에  url에  API에서 요구하는 변수들을 넣어 요청하면 된다.
 
@@ -43,7 +43,7 @@ url 작성은 이런식으로 작성하면 된다.
 
 작성된 url을 주소창에 입력하면 
 
-![Untitled](/assets/img/Untitled3.png)
+![Untitled](/assets/img/Untitled 3.png)
 
 이런식으로 xml 형태로 조회한 정보들을 제공한다.
 
@@ -107,7 +107,7 @@ Root노드에서 정규화를 해준다.
 
 ### 데이터 꺼내오기
 
-![Untitled](/assets/img/Untitled4.png)
+![Untitled](/assets/img/Untitled 4.png)
 
 필요한 데이터들의 부모 노드 가져와 list에 담아둔다.
 
@@ -154,7 +154,7 @@ for(int i=0; i<nList.getLength();i++){
 
 ### 결과
 
-![Untitled](/assets/img/Untitled5.png)
+![Untitled](/assets/img/Untitled 5.png)
 
 데이터들이 잘 파싱되었다. 
 
