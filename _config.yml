@@ -86,13 +86,13 @@ comments:
   # utterances settings › https://utteranc.es/
   utterances:
     repo: 
-    issue_term: pathname # < url | pathname | title | ...>
+    issue_term:  # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
     repo: Afdddd/Afdddd.github.io
-    repo_id:
+    repo_id: R_kgDOKL7Dpw
     category: General
-    category_id:
+    category_id: DIC_kwDOKL7Dp84CY7v9
     mapping: # optional, default to 'pathname'
     input_position: # optional, default to 'bottom'
     lang: # optional, default to the value of `site.lang`
