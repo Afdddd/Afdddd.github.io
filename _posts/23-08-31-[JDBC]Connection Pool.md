@@ -10,7 +10,9 @@ tags: [java,connection-pool,jdbc]
 
 ---
 <br>
-![Untitled](23-08-31(1).png)
+
+![Untitled](/assets/img/23-08-31(1).png)
+
 <br>
 1. 애플리케이션 로직은 DB드라이버를 통해 커넥션을 조회한다.
 2. DB드라이버는 DB와 TCP/IP 커넥션을 연결한다. 이과정에서 3way handShake같은 TCP/IP같은 연결을 위한 네트워크 동작이 이루어짐.
@@ -30,7 +32,8 @@ tags: [java,connection-pool,jdbc]
 
 <br>
 
-![Untitled](23-08-31(2).png)
+![Untitled](/assets/img/23-08-31(2).png)
+
 <br>
 
 - 애플리케이션을 시작하는 시점에 커넥션 풀은 필요한 만큼 커넥션을 미리 확보해서 풀에 보관한다.  보통 얼마나 보관할 지는 서비스의 특징과 서버 스펙에 따라 다르지만 기본값은 보통 10개이다.
