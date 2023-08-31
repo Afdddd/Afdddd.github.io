@@ -45,7 +45,7 @@ public interface DataSource {
 > [결과]<br>
 INFO hello.jdbc.Connection.ConnectionTest - connection =conn0: url=jdbc:h2:tcp://localhost/~/test2 user=SA class= class org.h2.jdbc.JdbcConnection
 INFO hello.jdbc.Connection.ConnectionTest - connection =conn1: url=jdbc:h2:tcp://localhost/~/test2 user=SA class= class org.h2.jdbc.JdbcConnection
-> 
+
 <br>
 <br>
 ### DataSource
@@ -72,7 +72,9 @@ DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new
 DEBUG org.springframework.jdbc.datasource.DriverManagerDataSource - Creating new JDBC DriverManager Connection to [jdbc:h2:tcp://localhost/~/test2]
 INFO hello.jdbc.Connection.ConnectionTest - connection =conn0: url=jdbc:h2:tcp://localhost/~/test2 user=SA class= class org.h2.jdbc.JdbcConnection
 INFO hello.jdbc.Connection.ConnectionTest - connection =conn1: url=jdbc:h2:tcp://localhost/~/test2 user=SA class= class org.h2.jdbc.JdbcConnection
-> 
+
+
+
 <br>
 `DriverManager`는 커넥션을 획득할 때 마다 URL , USERNAME , PASSWORD 같은 파라미터를 계속 전달해야 한다. 
 반면에 `DataSource`를 사용하는 방식은 처음 객체를 생성할 때만 필요한 파리미터를 넘겨두고, 커넥션을 획득할 때는 단순히 `dataSource.getConnection()`만 호출하면 된다.
@@ -83,9 +85,13 @@ INFO hello.jdbc.Connection.ConnectionTest - connection =conn1: url=jdbc:h2:tcp:/
 
 ---
 
+<br>
+
 **설정** : DataSource를 만들고  URL , USERNAME , PASSWORD 같은 부분을입력하는 것.
 설정과 관련된 속성들을 한곳에 모아두면 향후에 변경에 더욱 유연하게 대처할 수 있다.
 
 **분리** : 설정은 신경쓰지 않고 `DataSource`의 `getConnection()`을 사용하는것.
+
 <br>
+
 필요한 데이터를 `DataSource` 가 만들어지는 시점에 미리 다 넣어두게 되면, `DataSource` 를 사용하는 곳에서는 `dataSource.getConnection()` 만 호출하면 되므로, URL , USERNAME , PASSWORD 같은 속성들에 의존하지 않아도 된다. 그냥 `DataSource`만 주입받아서 `getConnection()` 만 호출하면 된다.
