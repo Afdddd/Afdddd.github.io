@@ -47,6 +47,10 @@ INFO hello.jdbc.Connection.ConnectionTest - connection =conn0: url=jdbc:h2:tcp:/
 INFO hello.jdbc.Connection.ConnectionTest - connection =conn1: url=jdbc:h2:tcp://localhost/~/test2 user=SA class= class org.h2.jdbc.JdbcConnection
 
 <br>
+
+매번 Connection을 생성할때마다 `DriverManager`에 설정값들을 넘겨줘야 한다.
+
+<br>
 <br>
 ### DataSource
 
@@ -65,6 +69,11 @@ INFO hello.jdbc.Connection.ConnectionTest - connection =conn1: url=jdbc:h2:tcp:/
     }
 ```
 <br>
+
+`DriverManager` 는 `DataSource` 인터페이스를 사용하지 않는다. 때문에 `DriverManager`를 직접 생성해서 사용해야한다.
+만약 `DriverManager`를 사용하다 connection pool로 변경을 한다고 하면 관련 코드들을 모두 수정해야한다.
+
+그래서 Spring에선 `DriverManagerDataSource` 를 제공한다.
 `DriverManagerDataSource` 는 spring에서 `DriverManager` 도 `DataSource` 를 통해서 사용할 수 있도록 구현한 클래스이다.
 <br>
 > [결과] <br>
@@ -76,6 +85,7 @@ INFO hello.jdbc.Connection.ConnectionTest - connection =conn1: url=jdbc:h2:tcp:/
 
 
 <br>
+
 `DriverManager`는 커넥션을 획득할 때 마다 URL , USERNAME , PASSWORD 같은 파라미터를 계속 전달해야 한다. 
 반면에 `DataSource`를 사용하는 방식은 처음 객체를 생성할 때만 필요한 파리미터를 넘겨두고, 커넥션을 획득할 때는 단순히 `dataSource.getConnection()`만 호출하면 된다.
 
