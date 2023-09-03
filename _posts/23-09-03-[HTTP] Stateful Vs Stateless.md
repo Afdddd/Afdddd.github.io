@@ -4,7 +4,7 @@ categories: [HTTP]
 tags: [http,stateful,stateless]
 ---
 
-# [HTTP] Stateflu vs Stateless
+# [HTTP] Stateful vs Stateless
 
 ---
 
@@ -28,7 +28,7 @@ TCP 3 way hadsahake 과정을 보자
 
 <br>
 
-![23-09-03(1)](assets/img/09-03-img/state-1.png)
+![23-09-03(1)](/assets/img/09-03-img/state-1.png)
 
 
 
@@ -51,11 +51,11 @@ TCP 3 way hadsahake 과정을 보자
 
 <br>
 
-![23-09-03(2)](assets/img/09-03-img/state-2.png)
+![23-09-03(2)](/assets/img/09-03-img/state-2.png)
 
 
 
-![23-09-03(3)](assets/img/09-03-img/state-3.png)
+![23-09-03(3)](/assets/img/09-03-img/state-3.png)
 
 
 
@@ -88,10 +88,10 @@ HTTP, 토큰 등 Stateless 구조를 가지고있다.
 
 <br>
 
-![23-09-03(4)](assets/img/09-03-img/state-4.png)
+![23-09-03(4)](/assets/img/09-03-img/state-4.png)
 
 
-![23-09-03(5)](assets/img/09-03-img/state-5.png)
+![23-09-03(5)](/assets/img/09-03-img/state-5.png)
 
 
 <br>
@@ -110,7 +110,7 @@ HTTP, 토큰 등 Stateless 구조를 가지고있다.
 
 <br>
 
-![23-09-03(6)](assets/img/09-03-img/state-6.png)
+![23-09-03(6)](/assets/img/09-03-img/state-6.png)
 
 <br>
 
