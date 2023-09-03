@@ -28,7 +28,7 @@ TCP 3 way hadsahake 과정을 보자
 
 <br>
 
-![출처:[](/assets/img/09-03-img/Untitled.png)
+![23-09-03(1)](assets/img/09-03-img/state-1.png)
 
 
 
@@ -51,11 +51,11 @@ TCP 3 way hadsahake 과정을 보자
 
 <br>
 
-![출처:[](/assets/img/09-03-img/Untitled1.png)
+![23-09-03(2)](assets/img/09-03-img/state-2.png)
 
 
 
-![출처:[](/assets/img/09-03-img/Untitled2.png)
+![23-09-03(3)](assets/img/09-03-img/state-3.png)
 
 
 
@@ -88,10 +88,10 @@ HTTP, 토큰 등 Stateless 구조를 가지고있다.
 
 <br>
 
-![출처:[](/assets/img/09-03-img/Untitled3.png)
+![23-09-03(4)](assets/img/09-03-img/state-4.png)
 
 
-![출처:[](/assets/img/09-03-img/Untitled4.png)
+![23-09-03(5)](assets/img/09-03-img/state-5.png)
 
 
 <br>
@@ -110,7 +110,7 @@ HTTP, 토큰 등 Stateless 구조를 가지고있다.
 
 <br>
 
-![출처:[](/assets/img/09-03-img/Untitled5.png)
+![23-09-03(6)](assets/img/09-03-img/state-6.png)
 
 <br>
 
@@ -121,6 +121,7 @@ HTTP, 토큰 등 Stateless 구조를 가지고있다.
 단, 클라이언트가 보내야할 데이터의 양이 많아진다.
 
 
-###출처
+<br><br><br>
+
 
 출처:[https://www.inflearn.com/course/http-웹-네트워크](https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC)
