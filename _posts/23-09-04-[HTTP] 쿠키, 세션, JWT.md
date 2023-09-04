@@ -1,6 +1,11 @@
-# [HTTP] 쿠키, 세션, JWT
+--- 
+layout: post 
+categories: [HTTP]
+tags: [cookie, session, jwt]
+---
 
 ---
+<br>
 
 기본적으로 웹 브라우저는 HTTP 기반으로 동작하고있다.
 
@@ -10,20 +15,28 @@ HTTP는 무상태(Stateless) 구조로 서버가 클라이언트의 상태를 �
 
 이러한 문제를 해결하기 위한 방법들이 있다.
 
+<br><br>
+
 ---
+
+<br>
 
 ## 쿠키(Cookie)
 
-> 웹서버가 생성하는 데이터를 담는 작은파일
-> 
+<br>
 
-![출처:[https://ko.wikipedia.org/wiki/HTTP_쿠키#/media/파일:HTTP_cookie_exchange.svg](https://ko.wikipedia.org/wiki/HTTP_%EC%BF%A0%ED%82%A4#/media/%ED%8C%8C%EC%9D%BC:HTTP_cookie_exchange.svg)](%5BHTTP%5D%20%E1%84%8F%E1%85%AE%E1%84%8F%E1%85%B5,%20%E1%84%89%E1%85%A6%E1%84%89%E1%85%A7%E1%86%AB,%20JWT%20a09a0bc6a81d417ab86dccf3c0500429/Untitled.png)
+> 웹서버가 생성하는 데이터를 담는 작은파일
+
+
+![23-09-04(1)](/assets/img/23-09-04/23-09-04(1).png.png)
 
 출처:[https://ko.wikipedia.org/wiki/HTTP_쿠키#/media/파일:HTTP_cookie_exchange.svg](https://ko.wikipedia.org/wiki/HTTP_%EC%BF%A0%ED%82%A4#/media/%ED%8C%8C%EC%9D%BC:HTTP_cookie_exchange.svg)
 
 1. 브라우저(클라이언트)에서 웹서버로 요청을 보낸다.
 2. 요청을 받은 서버는 응답 데이터와 쿠키를 함께 응답한다.
 3. 응답을 받은 쿠키를 브라우저의 메모리에 저장하고 브라우저에서 서버로 요청을 다시 보낼때 브라우저(클라이언트)의 정보를 가지고있는 쿠키를 서버에 보낸다.
+
+<br>
 
 쿠키에는 클라이언트의 정보를 담고 있으므로 서버는 쿠키에 담긴 정보를 토대로 데이터를 응답한다. 
 
@@ -34,22 +47,34 @@ HTTP는 무상태(Stateless) 구조로 서버가 클라이언트의 상태를 �
 
 쿠키의 사용 예로는  자동로그인, 쇼핑몰 장바구니 등이 있다.
 
+<br><br>
+
 ### 쿠키의 한계
 
 자동로그인 같이 사용자의 개인정보를 쿠키로 저장 할 시 로컬파일에 저장되므로 쉽게 조작되거나 중간에 가로챌 수 있는 위험이 있다.
 
+<br>
+
 ---
+
+<br>
 
 ## 세션(session)
 
+<br>
+
 > 클라이언트가 브라우저의 접속하고 서버와 접속이 종료되기 전의 상태
-> 
+
 
 기본적으로 세션은 쿠키를 기반으로 사용하고있다.
 
-![출처:[https://dongsik93.github.io/til/2020/01/08/til-authorization(1)](https://dongsik93.github.io/til/2020/01/08/til-authorization(1)/)](%5BHTTP%5D%20%E1%84%8F%E1%85%AE%E1%84%8F%E1%85%B5,%20%E1%84%89%E1%85%A6%E1%84%89%E1%85%A7%E1%86%AB,%20JWT%20a09a0bc6a81d417ab86dccf3c0500429/Untitled%201.png)
+<br>
+
+![23-09-04(2)](/assets/img/23-09-04/23-09-04(2).png)
 
 출처:[https://dongsik93.github.io/til/2020/01/08/til-authorization(1)](https://dongsik93.github.io/til/2020/01/08/til-authorization(1)/)
+
+<br>
 
 1. 사용자가 로그인을 위해 아이디, 비밀번호를 서버에 요청 (Post)
 2. 서버에선 회원 DB에 로그인한 사용자를 조회한다.
@@ -61,7 +86,12 @@ HTTP는 무상태(Stateless) 구조로 서버가 클라이언트의 상태를 �
 8. 세션ID에 해당하는 회원 정보를 반환한다.
 9. 마지막으로 서버에서 사용자에게 회원정보를 바탕으로 데이터를 응답한다.
 
+<br>
+<br>
+
 ### 세션의 장단점
+
+<br>
 
 쿠키만 사용했을 때는 보안이 취약하다는 단점이 있었다.
 
@@ -71,74 +101,96 @@ HTTP는 무상태(Stateless) 구조로 서버가 클라이언트의 상태를 �
 
 단, 세션정보를 조회하는 과정이 있어 많은 요청이 있으면 많은 시간과 자원이 든다.
 
+<br>
+<br>
+
 ---
+
+<br>
 
 ## JWT(Json Web Token)
 
+<br>
+
 > Json객체를 이용한 토큰 기반 인증 시스템
-> 
+
+<br>
+<br>
 
 ### JWT 구조
 
-![출처: [https://jwt.io/](https://jwt.io/)](%5BHTTP%5D%20%E1%84%8F%E1%85%AE%E1%84%8F%E1%85%B5,%20%E1%84%89%E1%85%A6%E1%84%89%E1%85%A7%E1%86%AB,%20JWT%20a09a0bc6a81d417ab86dccf3c0500429/Untitled%202.png)
+![23-09-04(3)](/assets/img/23-09-04/23-09-04(3).png)
 
 출처: [https://jwt.io/](https://jwt.io/)
 
+<br>
+
 JWT는 Header, Payload, Signature로 구성되었다.
+
+<br>
 
 **Header**
 
-```html
-{
-	"alg" : "HS256".
-	"typ" : "JWT"
-}
-```
+<br>
+
+![23-09-04(5)](/assets/img/23-09-04/23-09-04(5).png)
+
+<br>
+
 
 > Header는 Signature를 해싱하기 위한 정보를 담고있다.
 > 
 - alg  : 암호화 알고리즘
 - tpy : 토큰 유형
 
+<br>
+
 **Payload**
 
-```html
-{
-  "sub": "1234567890",
-  "name": "John Doe",
-  "iat": 1516239022
-}
-```
+<br>
+
+![23-09-04(6)](/assets/img/23-09-04/23-09-04(6).png)
+
+<br>
 
 > 서버와 클라이언트가 주고받는 실제 데이터를 담고있다.
 > 
 
+<br>
+
 **Signature**
 
-```html
-HMACSHA256(
-  base64UrlEncode(header) + "." + <--header Endcode
-  base64UrlEncode(payload),  <-- payload Encode
-	your-256-bit-secret <-- 서버키
-) secret base64 encoded
-```
+<br>
+
+![23-09-04(37)](/assets/img/23-09-04/23-09-04(7).png)
+
+<br>
 
 > 토큰의 유효성을 검증을 위한 문자열을 담고있다.
-> 
+
+<br>
 
 Header 와 Payload를 base64 Url Safe Encode 결과와 서버의 개인키와 합친 후 Header에 정의한 
 암호화 알고리즘으로 암호화한다.
 
-> **base64 Url Safe**
-> 
+<br>
+<br>
 
-base64란 문자들을 base64형태(ASCII)로 변환하여 전송하고 받는쪽은 다시 변환하여 하는 방법이다 하지만 마지막 62,63번 글자가 “+” 와 “/”이기 때문에 문자가 정상적으로 전송되지 않는 문제가 발생하는데  62,63번 글자를 “-” 와 “_” 로 변경한것을 **base64 Url Safe**이다.
+> **base64 Url Safe**
+> base64란 문자들을 base64형태(ASCII)로 변환하여 전송하고 받는쪽은 다시 변환하여 하는 방법이다 하지만 마지막 62,63번 글자가 “+” 와 “/”이기 때문에 문자가 정상적으로 전> 송되지 않는 문제가 발생하는데  62,63번 글자를 “-” 와 “_” 로 변경한것을 **base64 Url Safe**이다.
+
+<br>
+<br>
 
 ### 토큰 인증 과정
 
-![출처:[https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt)](%5BHTTP%5D%20%E1%84%8F%E1%85%AE%E1%84%8F%E1%85%B5,%20%E1%84%89%E1%85%A6%E1%84%89%E1%85%A7%E1%86%AB,%20JWT%20a09a0bc6a81d417ab86dccf3c0500429/Untitled%203.png)
+<br>
+
+![23-09-04(4)](/assets/img/23-09-04/23-09-04(4).png)
 
 출처:[https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt)
+
+<br>
 
 1. 클라이언트가 서버에 로그인 요청(ID, password)
 2. 서버측에서 인증 요청이 오면 암호화된 JWT를 생성해 쿠키에 담아 클라이언트에게 응답한다.
@@ -147,3 +199,6 @@ base64란 문자들을 base64형태(ASCII)로 변환하여 전송하고 받는�
 5. 서버는 요청 온 JWT를 유효한 토큰인지 검사를 한다.
 6. 만약 토큰이 유효하지 않거나 만료되었다면 오류를 반환한다.
 7. 토큰이 유효하다면 클라이언트의 요청 데이터를 응답한다.
+
+<br>
+<br>
