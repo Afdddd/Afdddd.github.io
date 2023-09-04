@@ -4,7 +4,6 @@ categories: [JDBC]
 tags: [java,jdbc,datasource]
 ---
 
-# [JDBC] DataSource
 <br>
 <br>
 ## DataSource란?
