@@ -4,11 +4,8 @@ categories: [HTTP]
 tags: [http,stateful,stateless]
 ---
 
-# [HTTP] Stateful vs Stateless
 
----
-
-<br><br><br>
+<br><br>
 
 ## Stateful(상태유지)
 
