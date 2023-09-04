@@ -4,7 +4,7 @@ categories: [JDBC]
 tags: [java,connection-pool,jdbc]
 ---
 
-# [JDBC] Connection Pool
+<br><br>
 
 ## 데이터베이스 커넥션 획득 과정
 
