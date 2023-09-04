@@ -30,7 +30,6 @@ HTTP는 무상태(Stateless) 구조로 서버가 클라이언트의 상태를 �
 
 ![23-09-04(1)](/assets/img/23-09-04/23-09-04(1).png)
 
-출처:[https://ko.wikipedia.org/wiki/HTTP_쿠키#/media/파일:HTTP_cookie_exchange.svg](https://ko.wikipedia.org/wiki/HTTP_%EC%BF%A0%ED%82%A4#/media/%ED%8C%8C%EC%9D%BC:HTTP_cookie_exchange.svg)
 
 1. 브라우저(클라이언트)에서 웹서버로 요청을 보낸다.
 2. 요청을 받은 서버는 응답 데이터와 쿠키를 함께 응답한다.
@@ -72,7 +71,6 @@ HTTP는 무상태(Stateless) 구조로 서버가 클라이언트의 상태를 �
 
 ![23-09-04(2)](/assets/img/23-09-04/23-09-04(2).png)
 
-출처:[https://dongsik93.github.io/til/2020/01/08/til-authorization(1)](https://dongsik93.github.io/til/2020/01/08/til-authorization(1)/)
 
 <br>
 
@@ -121,7 +119,7 @@ HTTP는 무상태(Stateless) 구조로 서버가 클라이언트의 상태를 �
 
 ![23-09-04(3)](/assets/img/23-09-04/23-09-04(3).png)
 
-출처: [https://jwt.io/](https://jwt.io/)
+
 
 <br>
 
@@ -177,7 +175,7 @@ Header 와 Payload를 base64 Url Safe Encode 결과와 서버의 개인키와 �
 <br>
 
 > **base64 Url Safe**
-
+> 
 > base64란 문자들을 base64형태(ASCII)로 변환하여 전송하고 받는쪽은 다시 변환하여 하는 방법이다 하지만 마지막 62,63번 글자가 “+” 와 “/”이기 때문에 문자가 정상적으로 전> 송되지 않는 문제가 발생하는데  62,63번 글자를 “-” 와 “_” 로 변경한것을 **base64 Url Safe**이다.
 
 <br>
@@ -189,7 +187,7 @@ Header 와 Payload를 base64 Url Safe Encode 결과와 서버의 개인키와 �
 
 ![23-09-04(4)](/assets/img/23-09-04/23-09-04(4).png)
 
-출처:[https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt)
+
 
 <br>
 
@@ -203,3 +201,14 @@ Header 와 Payload를 base64 Url Safe Encode 결과와 서버의 개인키와 �
 
 <br>
 <br>
+<br>
+
+<i>
+  
+출처
+[https://ko.wikipedia.org/wiki/HTTP_쿠키#/media/파일:HTTP_cookie_exchange.svg](https://ko.wikipedia.org/wiki/HTTP_%EC%BF%A0%ED%82%A4#/media/%ED%8C%8C%EC%9D%BC:HTTP_cookie_exchange.svg)  <br>
+[https://dongsik93.github.io/til/2020/01/08/til-authorization(1)](https://dongsik93.github.io/til/2020/01/08/til-authorization(1)/)  <br>
+[https://jwt.io/](https://jwt.io/)  <br>
+[https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt)
+
+</i>
