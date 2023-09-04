@@ -4,8 +4,6 @@ categories: [Java]
 tags: [java,openapi,xml]
 ---
 
-# [Java]오픈 API 파싱하기(XML)
-
 
 
 공공데이터 포털을 활용해 특정 버스의 도착 정보를 조회해보았다.
