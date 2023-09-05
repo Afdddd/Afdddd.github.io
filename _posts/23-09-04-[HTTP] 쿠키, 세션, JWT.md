@@ -208,7 +208,7 @@ Header 와 Payload를 base64 Url Safe Encode 결과와 서버의 개인키와 �
 
 <i>
   
-출처
+출처  <br>
 [https://ko.wikipedia.org/wiki/HTTP_쿠키#/media/파일:HTTP_cookie_exchange.svg](https://ko.wikipedia.org/wiki/HTTP_%EC%BF%A0%ED%82%A4#/media/%ED%8C%8C%EC%9D%BC:HTTP_cookie_exchange.svg)  <br>
 [https://dongsik93.github.io/til/2020/01/08/til-authorization(1)](https://dongsik93.github.io/til/2020/01/08/til-authorization(1)/)  <br>
 [https://jwt.io/](https://jwt.io/)  <br>
