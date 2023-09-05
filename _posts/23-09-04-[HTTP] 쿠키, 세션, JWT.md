@@ -203,6 +203,9 @@ Header 와 Payload를 base64 Url Safe Encode 결과와 서버의 개인키와 �
 <br>
 <br>
 
+
+---
+
 <i>
   
 출처
@@ -211,4 +214,4 @@ Header 와 Payload를 base64 Url Safe Encode 결과와 서버의 개인키와 �
 [https://jwt.io/](https://jwt.io/)  <br>
 [https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt)
 
-</i>
+
