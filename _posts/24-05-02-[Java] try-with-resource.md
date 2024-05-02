@@ -211,7 +211,7 @@ public class AppRunner {
 
 <br>
 
-![Untitled](/assets/img/24-05-02(1).png)
+![Untitled](/assets/img/24-05-02-img/result(1).png)
 
 <br>
 
@@ -236,7 +236,7 @@ public class AppRunner {
 ```
 <br>
 
-![Untitled](/assets/img/24-05-02(2).png)
+![Untitled](/assets/img/24-05-02-img/result(2).png)
 
 <br>
 FirstException과 SecondExeption 모두 화면에 출력된다.
