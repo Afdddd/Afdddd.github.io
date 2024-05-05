@@ -229,7 +229,7 @@ public class AppRunner {
     
         try(MyResource myResource = new MyResource()) {
             myResource.doSomeThing();
-            myResource.close();
+            // myResource.close();  try-with-resource가 자동으로 실행시켜주기 떄문에 작성안해도 됨
         }
     }
 }
