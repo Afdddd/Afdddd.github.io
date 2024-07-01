@@ -7,15 +7,22 @@ tags: [cookie, session, jwt]
 ---
 <br>
 
-기본적으로 웹 브라우저는 HTTP 기반으로 동작하고있다.
+쿠키, 세션, JWT 모두 상태를 무상태인 HTTP 프로토콜에서 상태를 저장하고 관리하기 위해 사용된다.
 
+기본적으로 웹 브라우저는 HTTP 기반으로 동작하고있다.
 HTTP는 무상태(Stateless) 구조로 서버가 클라이언트의 상태를 유지하지 않는다.
+
+>HTTP가 무상태인 이유? 상태를 저장하지 않으면 서버는 각 요청을 개별적으로 처리하고 응답할 수 있게 하고 동시 다발적인 요청을 처리할 수 있도록 하기 때문이다.
+
+<br>
 
 그렇기 때문에 서버는 클라이언트의 정보를 저장하지 않아 클라이언트를 구별 할 수 없고 클라이언트는 매번 인증을 진행해야한다.
 
+<br>
+
 이러한 문제를 해결하기 위한 방법들이 있다.
 
-<br><br>
+<br>
 
 ---
 
@@ -210,12 +217,11 @@ Header 와 Payload를 base64 Url Safe Encode 결과와 서버의 개인키와 �
 <br>
 <br>
 
-<i>
   
-출처  <br>
-[https://ko.wikipedia.org/wiki/HTTP_쿠키#/media/파일:HTTP_cookie_exchange.svg](https://ko.wikipedia.org/wiki/HTTP_%EC%BF%A0%ED%82%A4#/media/%ED%8C%8C%EC%9D%BC:HTTP_cookie_exchange.svg)  <br>
-[https://dongsik93.github.io/til/2020/01/08/til-authorization(1)](https://dongsik93.github.io/til/2020/01/08/til-authorization(1)/)  <br>
-[https://jwt.io/](https://jwt.io/)  <br>
+### Reference
+[https://ko.wikipedia.org/wiki/HTTP_쿠키#/media/파일:HTTP_cookie_exchange.svg](https://ko.wikipedia.org/wiki/HTTP_%EC%BF%A0%ED%82%A4#/media/%ED%8C%8C%EC%9D%BC:HTTP_cookie_exchange.svg) 
+[https://dongsik93.github.io/til/2020/01/08/til-authorization(1)](https://dongsik93.github.io/til/2020/01/08/til-authorization(1)/) 
+[https://jwt.io/](https://jwt.io/) 
 [https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt)
 
 
