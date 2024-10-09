@@ -5,7 +5,6 @@ tags: [mysql, 대용량데이터, TroubleShooting]
 ---
 
 
-# [CommerceCore]부하 테스트 (1) - 대용량 데이터 준비
 
 <br><br>
 
