@@ -1,22 +1,38 @@
+--- 
+layout: post 
+categories: [Project]
+tags: [mysql, 대용량데이터, TroubleShooting]
+---
+
+
 # [CommerceCore]부하 테스트 (1) - 대용량 데이터 준비
+
+<br><br>
 
 서버의 부하 테스트를 위해 대용량 데이터가 필요하다.
 
 python을 사용해서 대용량의 데이터가 담긴 csv파일을 만들고 csv 파일을 mysql의 `LOAD DATA INFILE` 명령어를 사용해 `Insert` 하도록 하겠다.
 
+<br>
+
 ### csv 파일 생성
 
-우선 임의의 사용자를 만들기 위해 python을 사용해 스크립트를 만들자
+우선 임의의 데이터를 만들기 위해 python을 사용해 스크립트를 만들자
 
 python의 faker 라이브러리를 사용할것이다.
 
 faker는 테스트용 가짜 데이터를 생성할때 사용하는 라이브러리이다.
 
-```java
+<br>
+
+```bash
 pip install faker
 ```
 
-![image.png](image.png)
+![image.png](/assets/img/CommerceCore/1009(1).png)
+
+
+<br>
 
 설치가 완료되면 대량의 데이터를 생성할 스크립트를 짜자
 
@@ -54,9 +70,14 @@ with open(filename, 'w', newline='') as csvfile:
 print(f'{num_rows}개의 데이터가 {filename}에 생성되었습니다.')
 ```
 
-![image.png](image%201.png)
+<br>
+
+![image.png](/assets/img/CommerceCore/1009(2).png)
+
 
 실행을 시켜주면 10만개의 데이터가 들어있는 csv 파일이 생성이 된다.
+
+<br><br>
 
 ### `LOAD DATA INFILE` 실행
 
@@ -72,6 +93,7 @@ ENCLOSED BY '"' -- 필드 값이 큰따옴표(")로 감싸져 있는 경우
 LINES TERMINATED BY '\n' -- 줄바꿈 구분자
 IGNORE 1 LINES; -- 파일의 첫 번째 줄(헤더)을 무시하는 옵션
 ```
+<br>
 
 만든 csv파일이 로컬에 있어서 `LOCAL`  옵션을 붙여줬다. 그리고 10만개의 데이터중 중복데이터가 있을 경우 무시하고 삽입할 수 있도록 `IGNORE` 옵션을 붙여줬다.
 
@@ -84,8 +106,11 @@ LINES TERMINATED BY '\r\n'
 IGNORE 1 LINES 
 (user_id, address, create_time, email, name, password, phone_num);
 ```
+<br>
 
 명령어를 실행 시켰더니 오류가 발생했다.
+
+<br><br>
 
 ### Error : 2068
 
@@ -93,7 +118,11 @@ IGNORE 1 LINES
 Error Code: 2068. LOAD DATA LOCAL INFILE file request rejected due to restrictions on access.
 ```
 
+<br>
+
 원인은 MySQL 서버에서 `LOCAL` 옵션을 사용하여 파일을 업로드하려 할 때 보안상의 이유로 접근 제한이 걸린 오류이다.
+
+<br><br>
 
 ### 해결 방법1
 
@@ -103,15 +132,21 @@ SHOW VARIABLES LIKE 'local_infile';
 
 명령어를 실행해 `local_infile` 변수가 활성화되어 있는지 확인하고, 비활성화되어 있다면 활성화 시키면 된다.
 
+<br>
+
 만약 `local_infile`이 `OFF`로 되어 있다면, 아래 명령을 실행시키면 활성화 시킬 수 있다.
 
 ```sql
 SET GLOBAL local_infile = 1;
 ```
 
-![image.png](image%202.png)
+![image.png](/assets/img/CommerceCore/1009(3).png)
+
+<br>
 
 이제 다시 `LOAD DATA LOCAL INFILE` 를 실행 시켜보자
+
+<br>
 
 ```
 Error Code: 2068. LOAD DATA LOCAL INFILE file request rejected due to restrictions on access.
@@ -119,15 +154,23 @@ Error Code: 2068. LOAD DATA LOCAL INFILE file request rejected due to restrictio
 
 하지만 또 다시 오류가 발생했다.
 
+<br>
+
 계속 로컬에서 DB서버로 파일 업로드가 실패하는데 내 예상에는 DB 서버가 private 서브넷에서 운영되어서 접근이 불가능한것같다.
+
+
+<br><br>
 
 ### 해결방법2
 
 로컬에서 업로드가 되지 않으니 DB서버에서 업로드 하기로 했다.
 
-csv 파일을 DB서버에 옮기고 `LOAD DATA INFILE`을 실행 시켜 보자
+<br>
 
 지금 상황이 CSV 파일이 로컬에 있고, MySQL DB 서버는 NCP의 private 서브넷에 있으며, 로컬에서 Bastion Host를 거쳐 MySQL Workbench를 통해 DB 서버에 연결하고 있는 상황이다.
+우선 CSV파일을 Bastion Host로 복사하고 Bastion Host에서 DB서버로 복사하고 `LOAD DATA INFILE`을 실행 시켜 보자
+
+<br>
 
 1. Bastion Host에 파일 업로드
 
@@ -137,13 +180,17 @@ SCP(Secure Copy Protocol)를 사용해 로컬 csv 파일을 Bastion Host로 전�
 scp -i [ssh키 암호] [복사할 csv파일 경로] [bastion 서버 ID]@[bastion 서버 ip]:[csv 붙여넣기할 경로]
 ```
 
-1. **DB 서버로 파일 복사** (Bastion Host를 통해)
+<br>
+
+2. **DB 서버로 파일 복사** (Bastion Host를 통해)
 
 ```
 scp [csv 파일 경로] [DB 서버 ID]@[DB 서버 ip]:[csv 붙여넣기할 경로]
 ```
 
 이제 `LOAD DATA INFILE` 명령어를 실행 시키면..
+
+<br><br>
 
 ### Error : 1290
 
@@ -153,7 +200,11 @@ Error Code: 1290. The MySQL server is running with the --secure-file-priv option
 
 또 다시 오류가 발생했다.
 
+<br>
+
 에러 코드 1290은 MySQL 서버에서 `--secure-file-priv` 옵션이 활성화되어 있어, 특정 디렉토리 외부에서 파일을 로드할 수 없다는 것을 의미한다. MySQL에서 보안상의 이유로 `LOAD DATA INFILE` 명령어를 사용할 때, 파일을 특정 디렉토리에서만 접근할 수 있게 설정두고있다.
+
+<br><br>
 
 ### 해결 방법
 
@@ -171,7 +222,11 @@ SHOW VARIABLES LIKE 'secure_file_priv';
 
 해당 결과 디렉토리에서만 파일을 로드할 수 있다.
 
+<br>
+
 조회 결과 : `/var/lib/mysql-files/`
+
+<br>
 
 2. **파일을 허용된 디렉토리로 이동**
 
@@ -183,7 +238,7 @@ mv /tmp/users_data.csv /var/lib/mysql-files/
 
 이제 다시 `LOAD DATA INFILE` 을 실행 시키면 
 
-![image.png](image%203.png)
+![image.png](/assets/img/CommerceCore/1009(4).png)
 
 정상적으로 10만개의 데이터가 삽입되었다. 10만개의 데이터가 삽입되는데 걸리는 시간은 2초밖에 걸리지 않았다.
 
