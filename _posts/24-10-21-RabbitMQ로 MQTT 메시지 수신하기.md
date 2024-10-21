@@ -13,7 +13,7 @@ tags: [RabbitMQ, MQTT, AMQP]
 
 ## RabbitMQ란?
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(1))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(1).png)
 
 <br>
 
@@ -82,7 +82,7 @@ docker exec -it rabbitmq rabbitmq-plugins enable rabbitmq_mqtt
 
 <br>
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(2))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(2).png)
 
 <br>
 
@@ -111,7 +111,7 @@ rabbitmq-plugins list
 
 <br>
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(3))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(3).png)
 
 [E] : 플러그인이 설치되었음을 의미
 
@@ -129,7 +129,7 @@ rabbitmq-plugins list
 
 RabbitMQ Management([http://localhost:15672/](http://localhost:15672/))에 접속한다.
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(4))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(4).png)
 
 - Username : guest
 
@@ -141,9 +141,9 @@ RabbitMQ Management([http://localhost:15672/](http://localhost:15672/))에 접�
 
 Queues and Streams 탭의 Add a new queue
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(5))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(5).png)
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(6))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(6).png)
 
 - Virtual host : 큐가 속할 가상 호스트(Virtual Host)를 설정
 - Type : 큐 유형 설정
@@ -159,7 +159,7 @@ MQTT 의 통신이 목적이므로 이름만 설정해주고 큐를 만들어주
 
 <br>
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(7))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(7).png)
 
 RabbitMQ에서 메시지를 처리할 때, 기본적으로 메시지는 교환기(Exchange)로 라우팅된다.  클라이언트에서 메시지를 보내면 RabbitMQ는 메시지를 내부 교환기로 보내고, 그 교환기로부터 지정된 큐에 바인딩을 통해 메시지를 전달하는 매커니즘이다.
 
@@ -174,13 +174,13 @@ RabbitMQ에서 메시지를 처리할 때, 기본적으로 메시지는 교환�
 
 RabbitMQ 관리 콘솔에서 **Exchanges** 탭으로 이동해  `amq.topic` 교환기를 선택
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(8))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(8).png)
 
 <br>
 
 **Bindings** 섹션에서 `MQTT_Queue` 큐를 특정 주제(예: `mqtt.topic`)와 바인딩한다.
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(9))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(9).png)
 
 <br>
 
@@ -194,7 +194,7 @@ PostMan에서 MQTT를 호환해준다. MQTT 메시지를 RabbitMQ에 보내 큐�
 
 메시지를 전송할 URL을 입력하자.
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(10))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(10).png)
 
 - `mqtt://` : **MQTT 프로토콜**을 사용하여 메시지를 전송하겠다는 것을 나타낸다.
 - [`localhost:1833`](http://localhost:1833) : 로컬 에서 실행 중인 MQTT 브로커(docker로 띄운 RabbitMQ 서버)에 연결
@@ -203,13 +203,13 @@ PostMan에서 MQTT를 호환해준다. MQTT 메시지를 RabbitMQ에 보내 큐�
 
 Connect 버튼을 눌러 브로커와 연결
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(11))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(11).png)
 
 <br>
 
 해당 메시지가 어떤 Queue로 갈지 Binding할 Topic을 설정해야한다.
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(12))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(12).png)
 
 - QOS : Quality of Service로 메시지 전달의 신회성을 보장하기 위한 메커니즘
     - QOS 0 : 메시지가 최대 1번 전송, 메시지 손실 가능성이 있다. (중복X, 손실 O)
@@ -222,19 +222,19 @@ Connect 버튼을 눌러 브로커와 연결
 
 <br>
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(13))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(13).png)
 
 메시지가 성공적으로 전송되었다. 
 
 <br>
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(14))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(14).png)
 
 이제 RabbitMQ Management에서 메시지가 Queue에 저장되어있는지 확인해보자.
 
 <br>
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(15))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(15).png)
 
 Ready에 1이 올라간게 보일텐데 성공적으로 메시지가 도착한것이다.
 
@@ -250,7 +250,7 @@ Ready에 1이 올라간게 보일텐데 성공적으로 메시지가 도착한�
 
 Get messages 탭에서 내가 보낸 메시지를 확인할 수 있다.
 
-![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(16))
+![image.png](/assets/img/rabbitMQ_MQTT/rabbitMQ_MQTT(16).png)
 
 내가 보낸 메시지가 맞다!
 
